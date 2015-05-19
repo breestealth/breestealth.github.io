@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用OpenWRT来科学上网 | 无故事的人</title>
+  <meta name="author" content="Francis Chen">
+
+  
+  <meta name="description" content="背景：使用shaodowsocks，非VPN方式。
+方案一：国内流量不走代理，其余的全部走代理。
+下载shadowsocks for openwrt的spec版本并安装配置；
+安装ChinaDNS，将上级查询地址设为114.114.114.114,127.0.0.1:5300；
+根据文档，配置好dn">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="无故事的人" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">使用OpenWRT来科学上网</h1>
+  
+
+    <time datetime="2015-01-23T05:39:13.000Z">
+  <span class="day">23</span><span class="month">Jan</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>背景：使用shaodowsocks，非VPN方式。</p>
+<h2 id="方案一：国内流量不走代理，其余的全部走代理。">方案一：国内流量不走代理，其余的全部走代理。</h2><ol>
+<li>下载shadowsocks for openwrt的spec版本并安装配置；</li>
+<li>安装<a href="http://sourceforge.net/projects/openwrt-dist/files/chinadns/" target="_blank" rel="external">ChinaDNS</a>，将上级查询地址设为<code>114.114.114.114,127.0.0.1:5300</code>；</li>
+<li>根据文档，配置好dnsmasq作为本地域名解析服务；</li>
+<li>启动shadowsocks/ChinaDNS以及dnsmasq；</li>
+<li>DONE</li>
+</ol>
+<h2 id="方案二：根据GFWList作为依据进行代理">方案二：根据GFWList作为依据进行代理</h2><ol>
+<li>下载shadowsocks for openwrt普通版本并安装配置。同时将/etc/init.d/shadowsocks中的启动命令改为ss-redir和ss-tunnel，并配置好ss-tunnel的转发规则（建议转发到5300端口的数据直接转发到8.8.8.8:53，也就是作为DNS域名解析的代理）；</li>
+<li>安装<a href="http://sourceforge.net/projects/openwrt-dist/files/chinadns/" target="_blank" rel="external">ChinaDNS</a>，将上级查询地址设为<code>114.114.114.114,127.0.0.1:5300</code>；</li>
+<li>卸载dnsmasq并安装dnsmasq-full、ipset以及iptables-mod-nat-extra三个组件；</li>
+<li>给流量打上标签并对打上标签的流量进行端口转发。具体作法为在/etc/firewall.include文件中添加以下命令：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipset -<span class="keyword">N</span> gfwlist iphash</span><br><span class="line">iptables -<span class="keyword">t</span> nat -A PREROUTING -<span class="keyword">p</span> tcp -<span class="keyword">m</span> <span class="keyword">set</span> --<span class="built_in">match</span>-<span class="keyword">set</span> gfwlist dst -<span class="keyword">j</span> REDIRECT --<span class="keyword">to</span>-port <span class="number">1080</span></span><br><span class="line">iptables -<span class="keyword">t</span> nat -A OUTPUT -<span class="keyword">p</span> tcp -<span class="keyword">m</span> <span class="keyword">set</span> --<span class="built_in">match</span>-<span class="keyword">set</span> gfwlist dst -<span class="keyword">j</span> REDIRECT --<span class="keyword">to</span>-port <span class="number">1080</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>其中1080为SS的端口，根据需要修改；</p>
+<ol>
+<li>修改/etc/dnsmasq.conf文件，添加一行<code>conf-dir=/etc/dnsmasq.d</code>。同时在/etc目录下创建dnsmasq.d的文件夹；</li>
+<li><a href="https://gist.github.com/lanceliao/85cd3fcf1303dba2498c" target="_blank" rel="external">使用脚本生成GFWList</a>。请根据需要修正DNS的端口，若没有修正ChinaDNS的默认配置，该数值为5353；</li>
+<li>将所有服务（shadowsocks, ChinaDNS以及firewall）全部设为开机自启；</li>
+<li>重启路由器；</li>
+<li>Done</li>
+</ol>
+<h3 id="几个需要注意的点：">几个需要注意的点：</h3><ol>
+<li>ss-tunnel的作用是转发DNS请求。国内的墙会对DNS进行投毒，所以通过代理使用Google提供的DNS进行解析，从而返回正确的结果；</li>
+<li>ss-redir的目的是为了流量转发，将特定标识的流量（本例中为需要X墙的流量使用Shadowsocks建立的代理转发，从而获取数据）</li>
+<li>shadowsocks建议购买而不是自行搭建，速度上面无法保证。如果需要建立，可以使用<a href="https://bandwagonhost.com/aff.php?aff=1281" target="_blank" rel="external">这个链接</a>进行购买最低配的VPS，一年4刀，足够一个人使用；</li>
+<li>没了。</li>
+</ol>
+
+    
+    
+    <footer class="meta">
+      
+      
+  <div class="tags">
+<a href="/tags/OpenWRT/">OpenWRT</a><a href="/tags/fuckwall/">翻墙</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2015 Francis Chen
+  
+</p>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
