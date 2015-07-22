@@ -44,6 +44,56 @@
   <header>
     
   
+    <h1 class="title"><a href="/2015/01/20/upgrade-openwrt-package.html">升级OpenWRT的包</a></h1>
+  
+
+    <time datetime="2015-01-20T03:57:50.000Z">
+  <span class="day">20</span><span class="month">Jan</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>一条命令解决一切问题。<br>基本思路：</p>
+<ol>
+<li>先用opkg提供的功能列出所有需要升级的包</li>
+<li>用sed对1中的结果进行处理，删除对包的解释文字</li>
+<li>opkg upgrade升级</li>
+</ol>
+<p>附上代码：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg upgrade <span class="variable">$(</span>opkg list-upgradable | sed <span class="string">'s/ - .*//'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>最后是常规性吐槽——为啥OpenWRT本身不提供这个功能，难道有人会只看升级包不升级？</p>
+
+    
+    
+    <footer class="meta">
+      
+      
+  <div class="tags">
+<a href="/tags/OpenWRT/">OpenWRT</a><a href="/tags/terminal/">terminal</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article>
+
+  <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
     <h1 class="title"><a href="/2015/01/20/somethingtosay.html">somethingtosay</a></h1>
   
 
@@ -453,60 +503,6 @@
 <p>这里是一个很大的厅堂，在厅堂的中央有一张高高的椅子，椅子上坐着一个人。由于太远我看不清他的脸，只能大约的判断那是一个40岁左右的男人。</p>
 <p>男人张口『你终于来了。』</p>
 <p>我听到这个声音，大吃一惊『竟然，是你！！！！』</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/11/18/20141118.html">看图说故事（110）</a></h1>
-  
-
-    <time datetime="2014-11-18T02:52:04.000Z">
-  <span class="day">18</span><span class="month">Nov</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/573addb2fe38f23802d85d71adf7b0eb0448c709-06a381742c2332d65670f11dd04bf86f93ba3010.jpg?imageView2/0/h/500/w/0/q/85" alt="赶路"></p>
-<p>小明要去上大学了。</p>
-<p>这在王家村可是一件大事情！村里面几十年了，就出了这么一个大学生，这可是块宝，要好好庆祝。</p>
-<p>小明家人忙起来了，忙着酬客就忙了好几天。酬客的时候，每个人脸上都洋溢着开心幸福的笑容——王家村的人都实在，发自内心的为老王高兴。</p>
-<p>三天后，酬客结束了，热闹的宴席散去，留下了更多的烦心事给老王。</p>
-<p>其中最关键的就是学费的问题。大学一年的学费要7000，这笔钱在王家村可就是一笔巨款。农村人苦钱不容易，一年忙到头也就是千把块钱，这一次要给7000块钱真的是难住了老王。</p>
-<p>但是娃儿还是要上学，事情还是得办。</p>
-<p>厚着脸皮把七大姑八大姨都借完之后，还差3000块钱没有着落。老王蹲在门口抽旱烟的功夫，眼光扫过了牛圈里的几头牛。</p>
-<p>……</p>
-<p>第二天大早，老王赶着牛上集市去了，身后留下了老板和儿子目送的眼光。</p>
-<p>到了集市，很快就将牛给卖出去了，老王顾不上身后牛哞哞的叫声，转身就往家走。他太着急了，要将这笔钱交到儿子手上。</p>
-<p>到家后，老王从内层口袋拿出还有体温的钱，脸上笑成了一朵花。</p>
-<p>『儿啊，这学费够了，你去了省城可要好好读书啊。咱王家村出你一个大学生不容易，在外要争气。』</p>
-<p>小明拿着钱，感受着父亲的提问，看着父亲满是皱纹的脸，目光又扫过空荡荡的牛棚，已经说不出话来，只能应一句『嗯』之后赶紧转身。</p>
-<p>泪水已经滑下。</p>
 
     
     
