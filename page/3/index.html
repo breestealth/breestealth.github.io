@@ -5,19 +5,32 @@
   
   <title>第 3 頁 | 无故事的人</title>
   <meta name="author" content="Francis Chen">
-
   
   
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+  
+  <meta property="og:site_name" content="无故事的人"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
   <link rel="alternate" href="/atom.xml" title="无故事的人" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
   <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
   
+
 </head>
 
+
 <body>
-  <header id="header" class="inner"><nav>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">无故事的人</a></h1>
+  <h2><a href="/"></a></h2>
+</div>
+<nav id="main-nav" class="alignright">
   <ul>
     
       <li><a href="/">Home</a></li>
@@ -25,499 +38,193 @@
       <li><a href="/archives">Archives</a></li>
     
   </ul>
-</nav></header>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
   <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
   <article class="post">
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-18T07:30:09.000Z"><a href="/2015/05/18/concept-change.html">2015-05-18</a></time>
+      
+      
   
-  <header>
-    
-  
-    <h1 class="title"><a href="/2015/01/20/upgrade-openwrt-package.html">升级OpenWRT的包</a></h1>
+    <h1 class="title"><a href="/2015/05/18/concept-change.html">观念变了</a></h1>
   
 
-    <time datetime="2015-01-20T03:57:50.000Z">
-  <span class="day">20</span><span class="month">Jan</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>一条命令解决一切问题。<br>基本思路：</p>
+    </header>
+    <div class="entry">
+      
+        <p>前几天一个朋友给我截图了另一个朋友的QQ空间，原本大概是这样子的<img src="http://picbed.qiniudn.com/QQ20150518-1@2x.png" alt="原文">
+      
+    </div>
+    <footer>
+      
+        
+          <div class="alignleft">
+            <a href="/2015/05/18/concept-change.html#more" class="more-link">Read More</a>
+          </div>
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-05-14T07:18:04.000Z"><a href="/2015/05/14/thailand-travel.html">2015-05-14</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2015/05/14/thailand-travel.html">泰国旅行注意事项</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="前言">前言</h2><p>本文就是根据我的记忆来写，难免有些错误或者偏差，若有请明确指出，谢谢。</p>
+<h2 id="相关事项">相关事项</h2><h3 id="提前签好还是落地签？">提前签好还是落地签？</h3><p>强烈建议提前签好而不是落地签。落地签其实对时间的消耗很大（根据人数不等而有所不同），而你到了泰国就没有必要浪费时间在海关，而是尽快入住酒店开始你的泰国之旅。所以，提前签好吧，和落地签的费用大概相差20 ~ 30块钱不等，但是带来的体验要好太多了。</p>
+<h3 id="手机卡">手机卡</h3><p>这个不用说了，就算你给朋友发个图片也需要网络，但是依靠Wi－Fi太不现实了。所以一定要提前从淘宝买一张泰国用的手机卡。问清楚你的手机的制式以及卡的大小（大卡，小卡之类一定要问清楚，别买了不能用就崩溃了，一般报手机型号老板会告诉你买哪种）。<br>一般手机卡买7天卡就行了，7天是以你到泰国后，把卡插入手机那一天开始计算。如果超过7天多买一张很重要。虽然泰国国内也可以办，但是价格会贵一些，一般淘宝价格30左右吧。</p>
+<h3 id="语言">语言</h3><p>英文算是通用的，虽然很多人听不太懂太多，但是单词能听懂，能完成基本的交流。<br>中文主要是出现在大商场，聊胜于无，有最好，没有也不要想太多。</p>
+<h3 id="天气">天气</h3><p>泰国是一个天气非常炎热的国家。到底有多炎热呢？这么说吧，早晨10点钟出门我都感觉受不了——要知道在国内，在南京这种火炉城市，我都可以正常的下午一两点出门没有太多感觉。嗯，所以你们懂了。<br>总结起来：</p>
 <ol>
-<li>先用opkg提供的功能列出所有需要升级的包</li>
-<li>用sed对1中的结果进行处理，删除对包的解释文字</li>
-<li>opkg upgrade升级</li>
+<li>非常热；</li>
+<li>防晒要做好——阳伞、防晒霜能上就都上吧；</li>
+<li>出门一定要带水或者买水；</li>
 </ol>
-<p>附上代码：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg upgrade <span class="variable">$(</span>opkg list-upgradable | sed <span class="string">'s/ - .*//'</span> )</span><br></pre></td></tr></table></figure></p>
-<p>最后是常规性吐槽——为啥OpenWRT本身不提供这个功能，难道有人会只看升级包不升级？</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-  <div class="tags">
-<a href="/tags/OpenWRT/">OpenWRT</a><a href="/tags/terminal/">terminal</a></div>
-
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2015/01/20/somethingtosay.html">somethingtosay</a></h1>
-  
-
-    <time datetime="2015-01-20T01:42:57.000Z">
-  <span class="day">20</span><span class="month">Jan</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p>下周开始，看图说故事升级为2周一篇，每篇使用3张图片组成一个较大的故事。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2015/01/19/20150119.html">看图说故事（119）</a></h1>
-  
-
-    <time datetime="2015-01-19T10:28:04.000Z">
-  <span class="day">19</span><span class="month">Jan</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <hr>
-<p><img src="http://picbed.qiniudn.com/811c0479a4e4fa81901ae1b826278ef88167667c-4430ae7ef695d75f9c46116f65613b1f7f2b6466.jpg?imageView2/0/h/500/w/0/q/85" alt="守护"></p>
-<p>我去拜访我的老朋友，C，他住在后面的山头上面。</p>
-<p>我辛辛苦苦走到了半山腰，看到了这只狗——纯白的一只。它虎视眈眈的看着我，仿佛想从我的行为中看出我的意图，那种不友好的眼神，让我有种不自在的感觉。</p>
-<p>当我准备绕过去的时候，它走了两部，挡在了我的面前；我换了个方向，它又跑过来挡住我。</p>
-<p>如此总共三次。</p>
-<p>我算是看出来了，它就是故意不让我过去！！！</p>
-<p>无奈只能打电话给C，告诉他这个情况。</p>
-<p>C在电话中哈哈大笑，然后说“你把外放打开，我和它说两句。”</p>
-<p>C在电话那头对这只狗说了两句话，狗狗乖乖的让开，再也没有挡住我。</p>
+<h3 id="泰铢怎么来">泰铢怎么来</h3><p>兑换泰铢，需要去银行预约。正常情况是提前一天预约，比如周一预约周二去取就行了。在这里，推荐<strong>中国银行</strong>，原因无他，汇率比较高。<br>另外推荐办一张华夏银行的借记卡出门。这样子到了泰国，在有“银联”标记的取款机上就可以直接取泰铢了，而且每天<strong>第一笔</strong>取款免手续费（华夏银行手续费），但是泰国方面会收50泰铢的手续费（这个手续费没有发现办法可以避免）。<br>从个人的经验来看，银行兑换2,000人民币就够了，大概10,000泰铢，足够日常生活使用了。<br>哦，忘记说了，泰铢对人民币大概是5:1</p>
+<h3 id="小费问题">小费问题</h3><p>很多攻略上会说泰国是一个小费的国家，什么都要给小费，恨不得去个WC都要给小费。但是就我的经验来看，这个要看城市和个人心情来处理。比如清迈的小费就非常少见，少见到我主动给宾馆人员人家都甩手No、No。<br>记住以下几点：</p>
+<ol>
+<li>小费<strong>绝对不能</strong>给硬币！绝对不能！！在泰国硬币是给乞丐的，如果拿硬币给小费，不排除有被攻击的可能。泰国纸币最小面纸是20，所以小费的标准是20泰铢（当然你要给2000也没有人拦着你）；</li>
+<li>入住酒店时，帮你拿行李的小弟、带你去房间的MM你可以考虑每人给20泰铢；</li>
+<li>每天更换被褥时，在床头柜上放20泰铢的小费；</li>
+<li>饭店吃饭不是一定要给，看心情；</li>
+<li>如果定了机场接送机服务，看心情给不给——比如人家凌晨4点钟来接你，你觉得很辛苦，你可以适当的给一点（20－50不等即可）；</li>
+<li>打车（这个只限于曼谷，具体下文交通工具部份会说），一般是不找零头的，比如打车费57，你不要指望别人会找你43，一般就是40。</li>
+</ol>
+<p>所谓的泰国是小费国家，很多情况下是导游弄出来的事情，根本没有这么回事，还是一句话“看心情”。</p>
+<h3 id="两个老人是谁？">两个老人是谁？</h3><p>在泰国，你可能经常看到一些地方挂着两个老人的照片，而且是相同的人。<br>现在问题来了，老人是谁？<br>答案是——泰王和泰王妃。<br>泰国人对他们的国王非常尊重（虽然国王没有实权），所以切记在泰国<strong>千万不能</strong>去调侃泰王和泰王妃，否则后果非常严重（反正我没有试过，但是千万不要冒险尝试。他们对国王的尊重是发自内心而不是国内的形于表面。）</p>
+<h3 id="其他事项">其他事项</h3><ol>
+<li>从<strong>任何</strong>一个酒店出门，都请拿一张该酒店的名片。当你不知道酒店位置时，这张卡将是你的救星。不要指望Booking或者Agoda上面可以给你太多帮助，里面很多地名都是中文！！</li>
+<li>多准备一些20泰铢的零钱，避免给小费的时候被迫拿出100的，真肉疼啊；</li>
+<li>护照是个好东西，就算不是随身带着，也要拍一张下来。很多购物店都是有退税的，而这个需要你提供护照号码——虽然小钱，但是本着“苍蝇也是肉”的想法，一定要带着；</li>
+<li>退税一般是在机场出境后有专门的Office处理这个，一般叫“VAT Refund Office”，要问人的话，直接说VAT也行；</li>
+<li>保证卡中有10000人民币的存款，应对这种情况和购物等使用，10,000泰铢是不可能够的；</li>
+<li>（上文说了）华夏银行卡必备，切记切记——当然如果你甩出一张VISA无限额的黑卡，当我没说！</li>
+<li>更换被褥——虽然每家酒店都有一个“更换被褥卡”（抱歉，不知道怎么说），但是每家酒店不一样。有些是把卡放在被子上表示要换，有些是不放在被子上表示要换，所以要看清楚英文解释。但是对于浴巾之类的都是统一的，如果你要更换，将浴巾和毛巾堆在地上一堆就行了；</li>
+<li>记得有一个软件叫作“金山词霸”，在关键时刻可以帮你很多；</li>
+<li>Google地图很重要。</li>
+</ol>
 <hr>
-<p>见到C，我一把拉住他——“快和我说说到底怎么回事。”</p>
-<p>原来这只狗是C收养的流浪狗，在它快要饿死的时候，C给了它一些吃的。就这么着，它活了下来，也逐渐就将C当作了主人，起到了看家护院的责任。这些都不是C教它的，而是它自己学会的。对于这点，C也表示很惊讶。究其原因，C觉得可能是本能或者动物与动物之间那种纯真的信任所起。</p>
+<h2 id="各个城市">各个城市</h2><h3 id="清迈">清迈</h3><h4 id="环境">环境</h4><p>清迈是一个非常安静并且悠闲的环境，整体感觉类似于国内的四川，很悠闲舒适。<br>清迈虽然是泰国第二大城市，但是也是小的可怜，这就为游玩打下了基础。</p>
+<h4 id="景点">景点</h4><ol>
+<li>卡佩门——可以看作是一个地标，会有一些集会之类，可以去看看；</li>
+<li>夜市——和夫子庙夜市差不多，有不少吃的地方；</li>
+<li>各种寺庙——这个不多说了，古城（Old City)里面很多；</li>
+<li>清迈大学——<strong>千万不要去</strong>。超级无聊的地方，而且不可以走进去，只能乘坐提供的游览车（竟然还要钱！），最终在某个湖给时间照相，超级无趣！</li>
+<li>丛林飞跃——必玩的项目，可以提前在国内定好，价格会便宜一点；</li>
+<li>大象营——不要想了，选择最大的美莎大象营吧。可以和上面的丛林飞跃一起报，费用自行淘宝；</li>
+</ol>
+<h4 id="交通工具">交通工具</h4><p>清迈的交通工具有三轮Taxi，普通Taxi和双条，其中双条是主要交通工具。<br>三轮Taxi最坑，贵而且态度不好，Pass；<br>普通Taxi是我在清迈被坑的一次，从机场到我的酒店，竟然要了我500泰铢，其实距离只有10公里不到！<br>双条是最常见的交通工具，一种类似于四轮农用车的东西，后面有两排座椅。价格便宜量又足——古城内一律20，超过了可以谈，我最贵坐过40泰铢还是60泰铢，距离大概在15公里，所以超级划算！这种交通工具，最重要的就是“说价格”。</p>
+<h4 id="其他建议">其他建议</h4><p>到了清迈机场，自己找一下交通工具，不要迷信“机场提供的Taxi”，会被坑。</p>
 <hr>
-<p>等我下山，那只狗也没有再拦我，而是欢快的摇起了尾巴送我下山。</p>
-<p>我相信那一刻，它对我的感觉，也一定是信任。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2015/01/12/20150112.html">看图说故事（118）</a></h1>
-  
-
-    <time datetime="2015-01-12T07:11:13.000Z">
-  <span class="day">12</span><span class="month">Jan</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <hr>
-<p><img src="http://picbed.qiniudn.com/05be93d2a3634b88308b24a17d51badb93daed5f-fffbb9a0a154d5d4277d2b6c01edf31209fcd101.jpg?imageView2/0/h/500/w/0/q/85" alt="难民区"></p>
-<p>这里是一个难民区，所有的居住者都是因为战争而背井离乡的难民。这里臭气熏天，遍地垃圾。</p>
-<p>大家应该都觉得这里一定是个悲伤的地方。</p>
-<p>可它真的不是。</p>
-<p>在这里我听到了比别的地方多很多的欢声笑语，也看到了非常多的关爱。</p>
-<p>因为这里有非常多的孩子。</p>
-<p>在这里，孩子的比例占到了70％，满大街都是孩子。而纯真无邪的孩子，将这里点缀成了一片欢乐的海洋。</p>
-<p>在这里，孩子们赤裸着上身，满大街的跑着、嚷着，互相打招呼，在下雨天，还会用脚踢起那一片的水花。</p>
-<p>还有那些孩子的笑容，很美。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/12/29/20141229.html">看图说故事（116）</a></h1>
-  
-
-    <time datetime="2014-12-29T05:39:37.000Z">
-  <span class="day">29</span><span class="month">Dec</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/7fa02ff0eecbea5b3549d3af2adee0db8dac4f3c-c8b8c5115a1d78533c8baa2a234eb95d51f68b51.jpg?imageView2/0/h/500/w/0/q/85" alt="卖伞人"></p>
-<p>Jim原本是一名士兵，直到他因为战斗伤残后退伍回家。</p>
-<p>虽然拿到了一笔不菲的补偿金，但是坐吃山空总有那么一天，未雨绸缪才是王道。</p>
-<p>于是Jim做起了个小生意——卖伞。</p>
-<p>虽说着都是卖伞，但是伞和伞不一样。Jim在部队中属于拆弹部队，所以手非常精巧，可以做很多精巧的工具。Jim也将这个优势带到了日常生活中。</p>
-<p>他虽然也是弄过来一批伞卖，但是每把伞Jim都会拆开做一些二次加工，比如加一些支撑物啦，做一些机械上的优化之类。经过Jim改造的伞，往往使用寿命和使用体验都有非常明显的提升。</p>
-<p>随之而来的就是Jim的伞卖的非常好。</p>
-<p>这天我又来到了Jim卖伞的地方。这个家伙身边摆着一堆伞，自己撑着把小伞已经睡着了——看样子昨天又忙到很晚。我不忍心打扰他，只是默默的写下这篇文章，希望能帮他多多宣传。</p>
-<p>需要伞的话，就去XX大街买一把吧，你一定不会失望哦。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/12/22/20141222.html">看图说故事（115）</a></h1>
-  
-
-    <time datetime="2014-12-22T05:44:35.000Z">
-  <span class="day">22</span><span class="month">Dec</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/296148a498123ae13272db17010d4f3062b3f2a1-8bf3880db9690f9a1d1b95400c5785a18450cbb9.jpg?imageView2/0/h/500/w/0/q/85" alt="无聊的男人"></p>
-<p>要是问对于男人来说，最痛苦的是啥，那一定是<strong>陪人逛街</strong>，而且绝对没有<strong>之一</strong>。</p>
-<p>比如你看Lee。</p>
-<p>Lee是某IT公司高管。他往常工作的时候，英姿飒爽，杀伐决断毫不犹豫。那个时候的他，一副“天下尽在我手”的霸气。在这种霸气之下，他帮助公司完成了好几论融资，最终帮公司顺利上市，成为了行业内的领头羊。</p>
-<p>当然，领头羊的高管也是有弱点的。</p>
-<p>比如现在，我就在他的对面，看着他在Dior门店外面，目光呆滞的插手而立，不知所措。</p>
-<p>没错，你说对了——他老婆在里面选购，他立马表现出了所有男人通用的“好无聊”的表情，而后成功的被“发配”到了外面等待。</p>
-<p>我上前去给Lee打了个招呼，他马上从发呆中醒过来，立马又恢复了公司中的状态。我也没有说破，只是淡淡一笑，递过去一根香烟，他接了过去，掏火机、点上、吐烟圈，一气呵成。</p>
-<p>看，男人果然都是一个样。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/12/15/20141215.html">看图说故事（114）</a></h1>
-  
-
-    <time datetime="2014-12-15T10:04:02.000Z">
-  <span class="day">15</span><span class="month">Dec</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/628cd14a57765a66f541021aef4093a8375f93ea-9697096fc97f257ac375d883e1533e4418badf03.jpg?imageView2/0/h/500/w/0/q/85" alt="回家的路"></p>
-<p>回家了。</p>
-<p>F满心欢喜的走在回家的路上——马上她就能见到她半岁的女儿了！！</p>
-<p>一天的工作，仿佛一个世纪那么长。她从来没有想过自己也会有这么一天，下班后不再随着小伙伴去玩耍，而是赶紧回家看她的宝贝女儿。天呐，一想到她那美丽的双眼，她就忍不住想要更快一点回到家中。</p>
-<p>终于快到家了，只要穿过这个长廊就到家了，F突然紧张起来，生怕自己有哪里不好，让还在襁褓中的女儿不喜欢。她赶紧停下来，打理了一下头发，弹了一下身上的灰尘，又给自己喷了一点香水——嗯，现在应该可以了。</p>
-<p>F推开门，“我回来了。”</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/12/08/20141208.html">看图说故事（113）</a></h1>
-  
-
-    <time datetime="2014-12-08T06:33:40.000Z">
-  <span class="day">8</span><span class="month">Dec</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/6109893b2cd99dcb24211b2dedd801bdfb0f6733-e2659a7e3896e695efc66a71c6dec41cbefcd7e3.jpg?imageView2/0/h/500/w/0/q/85" alt="生命之火"></p>
-<p>M和W是一对恋人。</p>
-<p>他们已经活了500年，而他们的长相依然是20出头的样子——换言之，他们不会老，更不会死。</p>
-<p>这个秘密就是他们之间能相互产生生命之火。只要生命之火存在，他们就永远不会老。</p>
-<p>但是他们已经厌倦了这种不死的生活。他们看着人类的发展，看到了森林如何的被砍伐、动物如何的被猎杀、环境如何的被破坏。</p>
-<p>他们也偷偷做了很多，但是在人类前进的车轮前，他们的努力非常渺小。他们逐渐开始心灰意冷，甚至已经不愿意看着这个世界的无情的变化。</p>
-<p>“我不想活了。”有一天M对W说。</p>
-<p>“我也是。”W回答。</p>
-<p>三天后，他们来到了最后一片雨林，他们选中了森林中间一棵树。他们分立在树的两旁，相视一笑。</p>
-<p>“我们不忍心看着地球绿色如此消逝。只能将最后希望寄托给你，希望你可以替我们守护这片森林，拜托了。”</p>
-<p>生命之火灌注到了这棵树上，慢慢的这棵树开始快速生长，不久就突破了这片雨林，仿佛一个守护者俯身看着这片雨林。而M和W两人，形容枯槁，拉着手坐在了这棵守护者的脚下，很安详的，去了。</p>
-
-    
-    
-    <footer class="meta">
-      
-      
-      
-    </footer>
-    
-  </div>
-  
-</article>
-
-  <article class="post">
-  
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
-  
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/12/02/20141202.html">看图说故事（112）</a></h1>
-  
-
-    <time datetime="2014-12-02T07:22:07.000Z">
-  <span class="day">2</span><span class="month">Dec</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/00266d0924cb15a969bb4d17196dd9b073783400-3f0a06e2698fe3c5dd24abb4c980d929bf560e8d.jpg?imageView2/0/h/500/w/0/q/85" alt="没入黑暗的人"></p>
-<p>Jack坐在了墙边，等着最后一缕阳光的消失。</p>
-<p>他熄灭了烟头，静静坐在那里，不发一言。他心中明白，最后一缕阳光落山后，他的生命也就到了尽头。</p>
-<p>他心中淡淡一笑，飘过两个字——无悔。</p>
-<p>在杀了最后一名嗜血者后，他自己也被嗜血者咬到。毒素快速在他身体里蔓延，他的生命只到太阳落山前的最后一刻。</p>
-<p>他此刻心中只有一念——“我们就要见面了。”</p>
-<p>他的爱人，死于嗜血者的攻击——这也是他为什么发誓要消灭所有嗜血者的原因。现在他做到了，但是他的生命也要就此结束——这是否是他的爱人所要的呢？</p>
-<p>此时此刻，考虑这些问题已经毫无意义，不如淡淡的坐在这里，等着生命最后一刻的降临。</p>
-<p>那个世界的你，会怎么样子呢？会不会比这边要好看？会不会也很思念我？</p>
+<h3 id="普吉岛">普吉岛</h3><h4 id="环境-1">环境</h4><p>不说了，国内必然是5A级景点，随便海边拍张照片都能当桌面用的地方，你还想说啥？</p>
+<h4 id="景点-1">景点</h4><p>主要有几个可以选择：</p>
+<ol>
+<li>海滩——卡塔海滩，芭东海滩等都值得去看看；</li>
+<li>珊瑚岛、皇帝岛——一般是浮潜的地方，可以在国内报一个团过去，大概200 ~ 300人民币；</li>
+<li>其他就没了，来普吉岛不是玩海滩和浮潜还能玩啥？</li>
+</ol>
+<h4 id="交通工具-1">交通工具</h4><p>这里没有选择，强烈建议租一辆摩托车，费用大概是人民币60元（300泰铢）。租摩托车需要押护照，所以注意不要再需要用护照的时候租——貌似这种机会也不多。<br>出租车当然有，但是有了摩托车，谁还要出租车呢？<br>有一点要注意，虽然说普吉岛没有小偷，但是摩托车安全一定要注意，否则赔偿非常大（比如我的就写了55000泰铢，约合人民币11000），所以小心为上。</p>
+<h4 id="其他建议-1">其他建议</h4><ol>
+<li>食物很贵，最好准备。口味因人而异，不好推荐；</li>
+<li>建议住在卡塔海滩附近——人少，环境比芭东海滩好太多了；</li>
+<li>不建议深潜，一方面危险，另一方面还是请注意安全；</li>
+<li>建议选一个有泳池的酒店，你会Happy很多；</li>
+</ol>
 <hr>
-<p>随着最后一缕阳光的消逝，他身影也消失在黑暗中。剩下的，只有一张椅子。</p>
+<h3 id="曼谷">曼谷</h3><h4 id="环境-2">环境</h4><p>这个不说了，帝都么，一个还算现代化的城市——吵杂，人多，而且是泰国最热的城市。</p>
+<h4 id="景点-2">景点</h4><ol>
+<li>大皇宫——没有特殊原因，能去就去一下；</li>
+<li>考山路——吃货的天堂就在这条路附近。这条路和夫子庙差不多，但是旁边的一条美食街绝对要去看看，比如你不想吃18人民币的两只咖喱蟹么；）</li>
+<li>Siam——想象成新街口吧，一个很大的Shopping Mall，值得去看看。里面吃的也不少，甚至还有CoCo奶茶（跪了</li>
+<li>King Power——王权免税店，很霸气有木有。这里的东西相对国内非常便宜，比如手表、比如欧莱雅（貌似也就看到一个护肤品），各种繁杂的东西值得你去看看，而且里面到处都是中文，严重怀疑就是为了吸引中国人去买东西。</li>
+</ol>
+<h4 id="交通工具-2">交通工具</h4><p>不要说了，不要指望有双条、摩托车这种了，老老实实打车，或者轻轨，当然11路也是可以的。<br>出租车上车前，一定要问清楚是否打标（By Meter），如果不是By Meter就可以直接换车了。一般曼谷当地人开出租会愿意，一般不愿意的都是印度的阿三，注意甄别。</p>
+<h4 id="其他建议-2">其他建议</h4><ol>
+<li>曼谷是一个阿三很多的地方，一定要注意安全！</li>
+</ol>
 
-    
-    
-    <footer class="meta">
       
+    </div>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
-    
   </div>
-  
 </article>
+
+
+
 
   <article class="post">
   
-    <div class="gallery">
-  <div class="photoset">
-    
-      <img src="">
-    
-  </div>
-  <div class="control">
-    <div class="prev"></div>
-    <div class="next"></div>
-  </div>
-</div>
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-04-13T12:23:15.000Z"><a href="/2015/04/13/bicycle.html">2015-04-13</a></time>
+      
+      
   
-  <header>
-    
-  
-    <h1 class="title"><a href="/2014/11/19/20141119.html">看图说故事（111）</a></h1>
+    <h1 class="title"><a href="/2015/04/13/bicycle.html">车，无人</a></h1>
   
 
-    <time datetime="2014-11-19T07:52:04.000Z">
-  <span class="day">19</span><span class="month">Nov</span>
-</time>
-  </header>
-  <div class="entry-content">
-    
-      <p><img src="http://picbed.qiniudn.com/6e203791dc3099f94d76a7cc41597b594f6d702a-5b12fd0438261b2f6135f35170516b30fb2aec68.jpg?imageView2/0/h/500/w/0/q/85" alt="Winter is Coming"></p>
-<p>冬天来了。</p>
-<p>万耐静寂。</p>
-<p>不仅仅是鸟不见了，人也不见了踪影。</p>
-<p>整个空间陷入了绝对的宁静，一点声响都没有；在我走过这栋房子的时候，踩着没膝的雪，没有发出一点声音。</p>
-<p>最可怕的是，当我回头的瞬间，我看不到自己的脚印；脚印瞬间被落雪覆盖了，落雪消除了一切的痕迹。</p>
-<p>我走到门廊下，敲门，希望可以借宿一宿。我敲了很久很久，始终没有人给我开门。就当我准备知难而退、转身离去的瞬间，在我的身后传来了『吱呀』的声音——门开了。</p>
-<p>我转过头，看到门开了一条缝。透过那条缝，我看到了吞噬一切的黑暗。</p>
-<p>作为一个旅人，我别无选择，只能推开门，进入了这个未知的黑暗中。</p>
-<p>屋子比想象中的要大许多，我顺着长廊尽头一点点微弱昏黄的灯光，摸索着向前走，好不容易走到了光源处，发现那儿是一个烛台。</p>
-<p>我摸了一下那个烛台，没有一点灰尘，仿佛有人打扫过一般。就在我疑惑之际，我的左侧传来了一个声音：『请随我来。』</p>
-<p>我看不到人，但是我听到了脚步声。虽然我内心狂跳不已，但是我努力的压逼着我的恐惧，跟着脚步声走到了房间的深处。</p>
-<p>这里是一个很大的厅堂，在厅堂的中央有一张高高的椅子，椅子上坐着一个人。由于太远我看不清他的脸，只能大约的判断那是一个40岁左右的男人。</p>
-<p>男人张口『你终于来了。』</p>
-<p>我听到这个声音，大吃一惊『竟然，是你！！！！』</p>
+    </header>
+    <div class="entry">
+      
+        <p><img src="http://picbed.qiniudn.com/e4cfdacf5783581f3789787a78767bbbab2df14f-86044a4618850317f689a671be9b062574dba346.jpg?imageView2/0/h/500/w/0/q/85" alt="车，无人"><br>他爱上了她。</p>
+<p>她不认识他。</p>
+<p>但是他爱上了他。</p>
+<p>可惜他只是一个普通人，他什么都没有。</p>
+<p>而她，是坐拥千万身家的大小姐。</p>
+<p>于是他只能远远的看着她——远远的看着她，如同今天这样子。</p>
+<p>他看着她从豪车中出来，走到了豪华商场门口；他从自行车上跳了下来，慢慢的走过去，看着她，看着她，看着她消失在商场的门中。</p>
+<p>也许，这也是一种美好。</p>
 
-    
-    
-    <footer class="meta">
       
+    </div>
+    <footer>
       
+        
+        
       
+      <div class="clearfix"></div>
     </footer>
-    
   </div>
-  
 </article>
 
 
-<nav id="pagenavi">
+
+
+
+<nav id="pagination">
   
     <a href="/page/2/" class="alignleft prev">上一頁</a>
   
@@ -525,21 +232,50 @@
     <a href="/page/4/" class="alignright next">下一頁</a>
   
   <div class="clearfix"></div>
-</nav></div>
-  <footer id="footer" class="inner"><div class="social alignright">
-  
-  
-  
-  
-  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</nav></div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜尋">
+    <input type="hidden" name="q" value="site:blog.ihavenostory.me">
+  </form>
 </div>
-<p>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">標籤</h3>
+  <ul class="entry">
+  
+    <li><a href="/tags/Hello/">Hello</a><small>1</small></li>
+  
+    <li><a href="/tags/OpenWRT/">OpenWRT</a><small>2</small></li>
+  
+    <li><a href="/tags/terminal/">terminal</a><small>1</small></li>
+  
+    <li><a href="/tags/heartroad/">心路</a><small>1</small></li>
+  
+    <li><a href="/tags/growup/">成熟</a><small>1</small></li>
+  
+    <li><a href="/tags/story/">看图说故事</a><small>1</small></li>
+  
+    <li><a href="/tags/fuckwall/">翻墙</a><small>1</small></li>
+  
+  </ul>
+</div>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
   
   &copy; 2015 Francis Chen
   
-</p>
+</div>
 <div class="clearfix"></div></footer>
-  <script src="/js/jquery.imagesloaded.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
 <script src="/js/gallery.js"></script>
 
 
@@ -553,12 +289,5 @@
 })(jQuery);
 </script>
 
-
-<div id="phasebeam">
-  <canvas></canvas>
-  <canvas></canvas>
-  <canvas></canvas>
-</div>
-<script src="/js/phasebeam.js"></script>
 </body>
 </html>
