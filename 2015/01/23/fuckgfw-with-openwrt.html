@@ -53,6 +53,7 @@
 安装ChinaDNS，将上级查询地址设为114.114.114.114,127.0.0.1:5300；
 根据文档，配置好dnsmasq作为本地域名解析服务；
 启动shadowsocks/ChinaDNS以及dnsmasq；">
+<meta property="og:updated_time" content="2015-04-24T12:57:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用OpenWRT来科学上网">
 <meta name="twitter:description" content="背景：使用shaodowsocks，非VPN方式。
@@ -216,7 +217,7 @@
 <li>下载shadowsocks for openwrt普通版本并安装配置。同时将/etc/init.d/shadowsocks中的启动命令改为ss-redir和ss-tunnel，并配置好ss-tunnel的转发规则（建议转发到5300端口的数据直接转发到8.8.8.8:53，也就是作为DNS域名解析的代理）；</li>
 <li>安装<a href="http://sourceforge.net/projects/openwrt-dist/files/chinadns/" target="_blank" rel="external">ChinaDNS</a>，将上级查询地址设为<code>114.114.114.114,127.0.0.1:5300</code>；</li>
 <li>卸载dnsmasq并安装dnsmasq-full、ipset以及iptables-mod-nat-extra三个组件；</li>
-<li>给流量打上标签并对打上标签的流量进行端口转发。具体作法为在/etc/firewall.include文件中添加以下命令：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ipset -<span class="keyword">N</span> gfwlist iphash</span><br><span class="line">iptables -<span class="keyword">t</span> nat -A PREROUTING -<span class="keyword">p</span> tcp -<span class="keyword">m</span> <span class="keyword">set</span> --<span class="built_in">match</span>-<span class="keyword">set</span> gfwlist dst -<span class="keyword">j</span> REDIRECT --<span class="keyword">to</span>-port <span class="number">1080</span></span><br><span class="line">iptables -<span class="keyword">t</span> nat -A OUTPUT -<span class="keyword">p</span> tcp -<span class="keyword">m</span> <span class="keyword">set</span> --<span class="built_in">match</span>-<span class="keyword">set</span> gfwlist dst -<span class="keyword">j</span> REDIRECT --<span class="keyword">to</span>-port <span class="number">1080</span></span><br></pre></td></tr></table></figure>
+<li>给流量打上标签并对打上标签的流量进行端口转发。具体作法为在/etc/firewall.include文件中添加以下命令：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ipset -N gfwlist iphash&#10;iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080&#10;iptables -t nat -A OUTPUT -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 1080</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>其中1080为SS的端口，根据需要修改；</p>

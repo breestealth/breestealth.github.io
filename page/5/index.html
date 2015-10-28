@@ -200,7 +200,7 @@
 <li>用sed对1中的结果进行处理，删除对包的解释文字</li>
 <li>opkg upgrade升级</li>
 </ol>
-<p>附上代码：<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg upgrade <span class="variable">$(</span>opkg list-upgradable | sed <span class="string">'s/ - .*//'</span> )</span><br></pre></td></tr></table></figure></p>
+<p>附上代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">opkg upgrade $(opkg list-upgradable | sed &#39;s/ - .*//&#39; )</span><br></pre></td></tr></table></figure></p>
 <p>最后是常规性吐槽——为啥OpenWRT本身不提供这个功能，难道有人会只看升级包不升级？</p>
 </span>
         
